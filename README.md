@@ -37,15 +37,31 @@ Your server must:
 Your multithreaded server will have an infinite loop to listen for connections. To shut down your server, you will have to interrupt it with a termination signal. Upon receiving the termination signal, your server must shut down gracefully, closing all sockets before exiting. You can design your program that best matches your programming styles.
 
 Advice on how to tackle this project:
-  • Implement your client first.
-  • Test your client’s GET command with an external HTTP server.
-    o Before you test your client with your server, test it with a web server that you know works. In other words, use your client to a get a file from some known external HTTP server. For example, from the command line: myclient www.amazon.com 80 GET index.html
-  • Now implement the server.
-  • Test the server with a browser (e.g., Firefox) as a HTTP client.
-    o For example, your server is running at host pc1.cs.uncc.edu on port number 12000, and there is a file index.html in the current directory. In the URL box of the web browser, type: pc1.cs.uncc.edu:12000/index.html The browser should fetch the file and display it.
-  • Now use your client to get a file from your HTTP server. For example, if your server is running on pc1.cs.uncc.edu port 12000, then enter at the command line: myclient pc1.cs.uncc.edu 12000 GET index.html
-  • Now use your client to put a file on your HTTP server.
+
+• Implement your client first.
+
+• Test your client’s GET command with an external HTTP server.
+
+o Before you test your client with your server, test it with a web server that you know works. In other words, use your client to a get a file from some known external HTTP server. For example, from the command line: 
+        
+        myclient www.amazon.com 80 GET index.html
+  
+• Now implement the server.
+
+• Test the server with a browser (e.g., Firefox) as a HTTP client.
+
+o For example, your server is running at host pc1.cs.uncc.edu on port number 12000, and there is a file index.html in the current directory. In the URL box of the web browser, type: 
+
+        pc1.cs.uncc.edu:12000/index.html 
+The browser should fetch the file and display it.
+
+• Now use your client to get a file from your HTTP server. For example, if your server is running on pc1.cs.uncc.edu port 12000, then enter at the command line: 
+        
+        myclient pc1.cs.uncc.edu 12000 GET index.html
+
+• Now use your client to put a file on your HTTP server.
 
 Other tips:
+
 Make sure to choose a server port number that is greater than 1023. Ports from 1-1023 are often used for well-known and widely used network services (e.g., port 80). Choosing a port number over 5000 is advisable. You can run all of the processes (all clients and the server) on the same machine. In this case, use “localhost” for the machine name. It is strongly
 recommended that you test your project in this way first, since you may sometimes run into issues with firewalls that are difficult to puzzle out. You can run do this from a Unix command line by running the server process in the background and then starting a client (if you want to open more than one client at a time, open another terminal and start).
